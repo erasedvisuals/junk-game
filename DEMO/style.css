@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#arena {
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://media3.giphy.com/media/l19ipdY2pjK3d8Omtz/giphy.gif?cid=ecf05e47rxcux5342zrrs3c9qqnddepqxqjh34nxgcev246m&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    width: 80vw;
+    height: 100vh;
+    max-width: 498px;
+    max-height: 498px;
+}
+
+#char {
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 12% 12% 12%;
+}
+
+#player {
+    width: 80px;
+    height: 180px;
+    /* background-color: cyan;
+    opacity: .3; */
+    overflow: hidden;
+}
+
+#opponent {
+    width: 80px;
+    height: 180px;
+    /* background-color: magenta;
+    opacity: .3; */
+    overflow: hidden;
+}
+
+.pg {
+    object-fit: cover;
+    object-position: 50%;
+    width: auto;
+    height: 100%;
+    position: relative;
+    right: 50%;
+}
+
+.wrong-text {
+    animation: wrong-text .5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+.att {
+    animation: attack 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+@keyframes attack {
+    0% {
+        left: 0px;
+        right: 0px;
+    }
+    75% {
+        left: 50%;
+        right: 0px;
+    }
+    80% {
+        left: 45%;
+        right: 0px;
+    }
+    83% {
+        left: 50%;
+        right: 0px;
+    }
+    86% {
+        left: 54%;
+        right: 0px;
+    }
+    89% {
+        left: 45%;
+        right: 0px;
+    }
+    85% {
+        left: 50%;
+        right: 0px;
+    }
+    90% {
+        left: 54%;
+        right: 0px;
+    }
+    95% {
+        left: 50%;
+        right: 0px;
+    }
+    100% {
+        left: 0px;
+        right: 0px;
+    }
+}
+
+@keyframes wrong-text {
+    0% {
+        left: 30px;
+        right: 0
+    }
+
+    20% {
+        right: 30px;
+        left: 0
+    }
+
+    40% {
+        left: 15px;
+        right: 0
+    }
+
+    60% {
+        right: 15px;
+        left: 0
+    }
+
+    80% {
+        left: 10px;
+        right: 0
+    }
+
+    100% {
+        right: 10px;
+        left: 0
+    }
+}
