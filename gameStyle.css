@@ -1,0 +1,171 @@
+/*
+         NEON COLORS PALETTE
+         Pink:     #FF1178
+         Red:      #FE0000
+         Yellow:   #FFF205
+         Cyian:    #01FFF4
+         Green:    #7CFF01
+         Bg-color: #181818
+         */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+main {
+    height: 100vh;
+    background-color: #181818;
+}
+
+#arena {
+    display: flex;
+    flex-direction: column;
+    background-image: url('./assets/img/arenas/corpo-building.gif');
+
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    width: 80vw;
+    height: 100vh;
+    max-width: 498px;
+    max-height: 498px;
+}
+
+#char {
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 12% 12% 12%;
+}
+
+#player {
+    width: 80px;
+    height: 180px;
+    overflow: hidden;
+}
+
+#opponent {
+    width: 80px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.pg {
+    object-fit: cover;
+    object-position: 50%;
+    width: auto;
+    height: 100%;
+    position: relative;
+    right: 50%;
+}
+
+
+
+/*
+        ANIMATION CLASSES AND KEYFRAMES
+*/
+.hurt {
+    animation: hurt .5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+.att {
+    animation: attack 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+@keyframes attack {
+    0% {
+        left: 0px;
+        right: 0px;
+
+    }
+
+    75% {
+        left: 50%;
+        right: 0px;
+    }
+
+    80% {
+        left: 45%;
+        right: 0px;
+    }
+
+    83% {
+        left: 50%;
+        right: 0px;
+    }
+
+    86% {
+        left: 54%;
+        right: 0px;
+    }
+
+    89% {
+        left: 45%;
+        right: 0px;
+    }
+
+    85% {
+        left: 50%;
+        right: 0px;
+    }
+
+    90% {
+        left: 54%;
+        right: 0px;
+    }
+
+    95% {
+        left: 50%;
+        right: 0px;
+    }
+
+    100% {
+        left: 0px;
+        right: 0px;
+    }
+}
+
+@keyframes hurt {
+    0% {
+        left: 30px;
+        right: 0;
+        box-shadow: inset 0 0 50px 0px rgb(255, 0, 0, .5);
+
+    }
+
+    20% {
+        right: 30px;
+        left: 0;
+
+    }
+
+    40% {
+        left: 15px;
+        right: 0;
+        box-shadow: 0 0 40px 0px rgb(255, 0, 0, .3);
+    }
+
+    60% {
+        right: 15px;
+        left: 0;
+        box-shadow: 0 0 50px 0px rgb(255, 0, 0, .3);
+    }
+
+    80% {
+        left: 10px;
+        right: 0;
+
+    }
+
+    100% {
+        right: 10px;
+        left: 0
+    }
+}

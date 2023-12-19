@@ -1,3 +1,13 @@
+/*
+         NEON COLORS PALETTE
+         Pink:     #FF1178
+         Red:      #FE0000
+         Yellow:   #FFF205
+         Cyian:    #01FFF4
+         Green:    #7CFF01
+         Bg-color: #181818
+         */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +24,7 @@ body {
 #arena {
     display: flex;
     flex-direction: column;
-    background-image: url('https://media3.giphy.com/media/l19ipdY2pjK3d8Omtz/giphy.gif?cid=ecf05e47rxcux5342zrrs3c9qqnddepqxqjh34nxgcev246m&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+    background-image: url('./assets/img/arenas/corpo-building.gif');
 
     background-color: darkslategray;
     background-repeat: no-repeat;
@@ -57,8 +67,8 @@ body {
     right: 50%;
 }
 
-.wrong-text {
-    animation: wrong-text .5s;
+.hurt {
+    animation: hurt .5s;
     position: relative;
     left: 0px;
     right: 0px;
@@ -75,6 +85,7 @@ body {
     0% {
         left: 0px;
         right: 0px;
+        
     }
     75% {
         left: 50%;
@@ -114,30 +125,36 @@ body {
     }
 }
 
-@keyframes wrong-text {
+@keyframes hurt {
     0% {
         left: 30px;
-        right: 0
+        right: 0;
+        box-shadow : inset 0 0 50px 0px rgb(255, 0, 0, .5);
+        
     }
 
     20% {
         right: 30px;
-        left: 0
+        left: 0;
+        
     }
 
     40% {
         left: 15px;
-        right: 0
+        right: 0;
+        box-shadow: 0 0 40px 0px rgb(255, 0, 0, .3);
     }
 
     60% {
         right: 15px;
-        left: 0
+        left: 0;
+        box-shadow: 0 0 50px 0px rgb(255, 0, 0, .3);
     }
 
     80% {
         left: 10px;
-        right: 0
+        right: 0;
+        
     }
 
     100% {

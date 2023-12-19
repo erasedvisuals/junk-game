@@ -1,0 +1,136 @@
+/*
+        ANIMATIONS
+*/
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 100;}
+}
+
+@keyframes idle {
+    0% {
+        box-shadow: 0px 0px 20px 0px #FF1178
+    }
+
+    33% {
+        box-shadow: 0px 0px 20px 2px #FF1178
+    }
+
+    66% {
+        box-shadow: 0px 0px 20px 1px #01FFF4
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 0px #01FFF4
+    }
+}
+
+.idle{
+    animation: idle 2s ease-out infinite alternate;
+}
+
+.fade-in{
+    animation: fade-in 5s normal 0 0 forwards;
+}
+
+
+/*
+        UTILITY FOR LAYOUT AND DESIGN
+*/
+* {
+    box-sizing: border-box;
+}
+.ww {
+    width: 80vw;
+}
+.bg-dark-mirror{
+    background-color: #181818e1
+}
+.bg-neon-mirror-c{
+    background-color: #01FFF4c7
+}
+.bg-neon-mirror-p{
+    background-color: #ff11784e
+}
+.o-none{
+    opacity: 0;
+}
+
+
+
+/*
+        CUSTOMIZATION
+*/
+#main {
+    background-image: url(./DEMO/assets/img/status-bg/start-game.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+}
+#starter{
+    color: #181818;
+}
+#logo{
+    max-width: 15rem;
+    transition: display 10s ease-in;
+    
+}
+
+.logo {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.pg{
+    object-fit: cover;
+    object-position: 50%;
+    width: auto;
+    height: 100%;
+    
+}
+.resize{
+    position: relative;
+    right: 25%;
+}
+
+
+
+/*
+            PG SELECTION RADIO
+*/
+.pg-img-container{
+    height: 70%;
+    width: 90%;
+}
+.radio-tile{
+    background-color: #181818e1;
+    color: whitesmoke;
+}
+.input-container{
+    position: relative;
+    min-height: 20vh;
+    min-width: 13vh;
+    max-height:14rem;
+    max-width: 7rem;
+    width: 13vh;
+    height: 20vh;
+    margin: 0.2rem;
+}
+.input-container input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+input:checked + .radio-tile{
+    box-shadow: 0px 0px 20px 1px #01FFF4;
+    background-color: #01fff2ba;
+    color: #181818 ;
+    font-weight: bold;
+}

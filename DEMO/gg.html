@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        .ww {
+            width: 80vw;
+        }
+
+        .hp {
+            height: 10px;
+        }
+
+        body {
+            background-color: #181818;
+        }
+
+        main {
+            background-image: url(assets/img/status-bg/start-game.gif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+            width: auto;
+            height: 100vh;
+        }
+
+        .cc {
+            object-fit: cover;
+            object-position: 50%;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Popup all'apertura per costringere a far partire audio-->
+    <main id="main" class="d-flex align-items-center gap-3 flex-column">
+        <button id="btnstart" class="btn bg-dark text-white border-success d-none">PRESS START</button>
+        <div class="w-75 overflow-hidden">
+            <img src="./assets/img/logo.gif" class="cc" alt="">
+        </div>
+        <button class="ww btn bg-dark text-white border fw-bold" id="pg-btn" type="button"  >PLAY</button>
+        <!--dropdown pgs-->
+        <div class="text-white ww bg-dark mt-4 d-flex flex-column justify-content-between align-items-center" style="height: 45%;">
+            <div class=" fw-bold">
+                <h3 class="text-center mt-3">CHOOSE YOUR PG</h3>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="d-flex justify-content-evenly">
+                    <input type="radio" name="pg-selection" id="">
+                    <label for="" class="d-flex flex-column">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </label>
+                    <input type="radio" name="pg-selection" id="">
+                    <label for="" class="d-flex flex-column">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                        <p>Name</p>
+                    </label>
+                    <input type="radio" name="pg-selection" id="">
+                    <label for="" class="d-flex flex-column">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </label>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <input type="radio" name="pg-selection" id="">
+                    <label for="" class="d-flex flex-column">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </label>
+                    <input type="radio" name="pg-selection" id="">
+                    <label for="" class="d-flex flex-column">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </label>
+                    <input type="radio" name="pg-selection" id="">
+                    <label for="" class="d-flex flex-column">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <a href=""><button class="w-75 bg-transparent text-white border mb-3 rounded">START GAME</button></a>
+
+        </div>
+    </main>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>
