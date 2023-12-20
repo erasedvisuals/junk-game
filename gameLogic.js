@@ -1,3 +1,24 @@
+//              NOTES
+/*
+        SFX FUNCTION FOR ATTACK
+btnAtt.addEventListener('click', function(){
+    sfxSteps.play()
+    sfxHit.volume = 1
+
+    setTimeout(()=>{
+        sfxHit.play()
+        document.getElementById('opponent').classList.add('hurt')
+    }, 1080)
+
+    document.getElementById('opponent').classList.remove('hurt')
+    document.getElementById('player').classList.add('att')
+
+    setTimeout(()=>{
+        document.getElementById('player').classList.remove('att')
+    },1510)
+})
+*/
+
 /*
         PG TYPE OBJECT
     
@@ -8,11 +29,13 @@
         orientation:"-end"
         hp: 100,
         hp-max: 150,
+        mana:
+        mana-max:
         strenght: function that returns a number,
         items: [{},{},{}],
         skills: [{},{},{}],
         arena: "arenaClassName"
-        theme: new Audio("audioSource")
+        theme: "audioSource"
         
     }
 
@@ -38,10 +61,10 @@
     }
 
 */
-/*
-        STATISTIC AND DECLARATIONS
-            OBJECTS BUILDING
-*/
+/*-------------------------------------------------
+|        DEFINING STATISTICS AND                   |
+|            OBJECTS BUILDING                      |
+---------------------------------------------------*/
 function exVal(minValue, maxValue) {
     // Function that extract a number between minValue(included) and MaxValue(included). 
     return Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
@@ -119,7 +142,7 @@ const PGList = [
         mana: 390,
         manaMax: 390,
         strenght: () => { return exVal(48, 62) },
-        items: [itemsList[0],itemsList[0], itemsList[4]],
+        items: [itemsList[0], itemsList[0], itemsList[4]],
         skills: [
             {
                 ico: "DEMO/assets/img/ico/katana.png",
@@ -128,7 +151,7 @@ const PGList = [
                 cost: 55,
                 role: 1,
                 animation: "animationClassName"
-            }, 
+            },
             {
                 ico: "DEMO/assets/img/ico/katana.png",
                 name: "Quantum Blade",
@@ -145,7 +168,7 @@ const PGList = [
                 role: 0,
                 animation: "animationClassName"
             }],
-        arena: "arena-CorpoBuilding",
+        arena: "arena-corpoBuilding",
         theme: "DEMO/assets/audio/corpoBuilding-theme.mp3"
     },
     {
@@ -167,7 +190,7 @@ const PGList = [
                 cost: 55,
                 role: 1,
                 animation: "animationClassName"
-            }, 
+            },
             {
                 ico: "DEMO/assets/img/ico/katana.png",
                 name: "Quantum Blade",
@@ -193,7 +216,7 @@ const PGList = [
                 animation: "animationClassName"
             },
         ],
-        arena: "arena-CorpoBuilding",
+        arena: "arena-foggyGasStation",
         theme: "DEMO/assets/audio/foggyGasStation-theme.mp3"
     },
     {
@@ -206,7 +229,7 @@ const PGList = [
         mana: 120,
         manaMax: 120,
         strenght: () => { return exVal(25, 89) },
-        items: [itemsList[0],itemsList[0], itemsList[1], itemsList[1], itemsList[1]],
+        items: [itemsList[0], itemsList[0], itemsList[1], itemsList[1], itemsList[1]],
         skills: [
             {
                 ico: "DEMO/assets/img/ico/contract.png",
@@ -215,7 +238,7 @@ const PGList = [
                 cost: 50,
                 role: 1,
                 animation: "animationClassName"
-            }, 
+            },
             {
                 ico: "DEMO/assets/img/ico/blackmarket.png",
                 name: "Black Market drug",
@@ -224,7 +247,7 @@ const PGList = [
                 role: 0,
                 animation: "animationClassName"
             }
-            ],
+        ],
         arena: "arena-industrialRooftop",
         //theme: new Audio("DEMO/assets/audio/industrialRooftop-theme.mp3")
     },
@@ -238,8 +261,8 @@ const PGList = [
         mana: 80,
         manaMax: 80,
         strenght: () => { return exVal(70, 89) },
-        items: [itemsList[6],itemsList[6], itemsList[6], itemsList[6], itemsList[6]],
-        skills: [ 
+        items: [itemsList[6], itemsList[6], itemsList[6], itemsList[6], itemsList[6]],
+        skills: [
             {
                 ico: "DEMO/assets/img/ico/blackmarket.png",
                 name: "Black Market drug",
@@ -248,7 +271,7 @@ const PGList = [
                 role: 0,
                 animation: "animationClassName"
             }
-            ],
+        ],
         arena: "arena-corpoStreet",
         theme: "DEMO/assets/audio/corpoStreet-theme.mp3"
     },
@@ -262,8 +285,8 @@ const PGList = [
         mana: 160,
         manaMax: 160,
         strenght: () => { return exVal(70, 89) },
-        items: [itemsList[0],itemsList[0], itemsList[1], itemsList[1], itemsList[4]],
-        skills: [ 
+        items: [itemsList[0], itemsList[0], itemsList[1], itemsList[1], itemsList[4]],
+        skills: [
             {
                 ico: "DEMO/assets/img/ico/prosthetic.png",
                 name: "Cyber-arm Punch",
@@ -280,7 +303,7 @@ const PGList = [
                 role: 1,
                 animation: "animationClassName"
             }
-            ],
+        ],
         arena: "arena-nightStreetfood",
         theme: "DEMO/assets/audio/nightStreetfood-theme.mp3"
     },
@@ -294,8 +317,8 @@ const PGList = [
         mana: 80,
         manaMax: 80,
         strenght: () => { return exVal(55, 72) },
-        items: [itemsList[4],itemsList[4], itemsList[1], itemsList[1]],
-        skills: [ 
+        items: [itemsList[4], itemsList[4], itemsList[1], itemsList[1]],
+        skills: [
             {
                 ico: "DEMO/assets/img/ico/hoverboard.png",
                 name: "Hollie Slash",
@@ -321,7 +344,7 @@ const PGList = [
                 animation: "animationClassName"
             }
 
-            ],
+        ],
         arena: "arena-vhsShop",
         theme: "DEMO/assets/audio/vhsShop-theme.mp3"
     },
@@ -336,7 +359,7 @@ const PGList = [
         manaMax: 250,
         strenght: () => { return exVal(70, 90) },
         items: [],
-        skills: [ 
+        skills: [
             {
                 ico: "icoPath",
                 name: "Laser",
@@ -353,16 +376,208 @@ const PGList = [
                 role: 0,
                 animation: "animationClassName"
             }
-            ],
+        ],
         arena: "arena-apocalypse",
         theme: "DEMO/assets/audio/apocalypse-theme.mp3"
     },
 
 ]
 
-for (let i = 0; i < 30; i++) {
 
-    // console.log(PGList[0].skills[0].strenght());
-    console.log(exVal(0, 1));
+
+/*---------------------------------------------
+|            VARIABLE DECLARATION             |  
+----------------------------------------------*/
+
+// Creating a copy of the main list of PGs
+let allOpponents = [...PGList]
+
+// Searchs and defines the player PG and removes it from the list of the opponent's PG
+//let iP = parseInt(new URLSearchParams(window.location.search).get('pg-selection'))
+//                           (iP, iP)[0]
+let player = allOpponents.splice(1, 1)[0]
+
+// HTML elements to build scenarios
+//         HEADING
+let heading = document.getElementsByClassName('heading')
+/*  [0]: span #curr-level
+    [1]: p    #msg
+    [2]: span #player-name
+    [3]: span #opponent-name
+*/
+
+//          ARENA
+let arena = document.getElementById('arena')
+//          Stats
+let statsWrapper = document.getElementById('stats-wrapper')
+let stats = document.getElementsByClassName('stats')
+/*  [0]: span #player-hp
+    [1]: span #player-hp-tot
+    [2]: div #hp-bar-p
+    [3]: span #opponent-hp
+    [4]: span #opponent-hp-tot
+    [5]: div #hp-bar-opp
+*/
+
+//         Char-section
+let charSection = document.getElementById('char-section')
+let pHTML = document.getElementById('player')
+let oppHTML = document.getElementById('opponent')
+/*              HTML String to inset
+    <img class="pg" src="./assets/img/characters/hunter.gif" alt="player">
+    <img class="pg" src="assets/img/characters/neon-female-warrior-end.gif" alt="opponent">
+*/
+
+//          ACTION BUTTONS
+let btnAtt = document.getElementsByClassName('btn-att')
+let btnSkill = document.getElementsByClassName('btn-skill')
+let btnItem = document.getElementsByClassName('btn-item')
+let btnRun = document.getElementsByClassName('btn-run')
+
+/*              HTMLitem to inset
+        ''''''''''''''''''''''''''''
+*/
+
+/*              HTMLskill to inset
+        '''''''''''''''''''''''''''''
+*/
+
+// Level counter
+let lvl = 0
+
+
+
+/*--------------------------------------
+|           FUNCTIONS                  |
+----------------------------------------*/
+//      Building Functions
+//TODO:
+function buildItems(p) {
+    // add the HTMLitem element to the Items Modal
+}
+//TODO:
+function buildSkills(p) {
+    // add the HTMLskill element to the Skills Modal
+}
+//TODO:
+function buildArena(p, o) {
+    // add the arenaClassName to #arena and
+    // innest the updated <img> HTML
+}
+//TODO:
+function buildHeading(p, o) {
+    // update the heading with the VS msg:
+    // set the current lvl, playername and oppName
+
+}
+function buildScenario(p, o) {
+    buildHeading(p, o)
+    buildArena(p, o)
+    new Audio(o.theme).play()
+    ableBtns()
+}
+function resetScenario(){
+    arena.classList.remove('arena-interlude-0')
+    arena.classList.remove('arena-interlude-1')
+    heading[1].textContent = 'VS'
 }
 
+//      Utility Functions
+function disableBtns(){
+    btnAtt.disabled = true
+    btnSkill.disabled = true
+    btnItem.disabled = true
+    btnRun.disabled = true
+}
+function ableBtns(){
+    btnAtt.disabled = false
+    btnSkill.disabled = false
+    btnItem.disabled = false
+    btnRun.disabled = false
+}
+
+//      Animation Functions
+function hide(){
+    // function to add th classe hide to the elements on th screen
+}
+function interlude(){
+    let arenaQuery = ['arena-interlude-0','arena-interlude-1', 'GOING TO DESTINATION...', 'MUST BE SOMEWHERE AROUND HERE...', 'I WILL FIND YOU...']
+    disableBtns()
+    hide()
+    arena.classList.add(arenaQuery[exVal(0,1)])
+    heading[1].textContent = arenaQuery[exVal(2,4)]
+}
+function endGameScreen(){
+
+}
+function gameOverScreen(){
+
+}
+
+//      Game Logic Functions
+function checkEndLvl(p, o) {
+    // dovrà controllare se ci sono condizioni di fine
+    // ovvero dovrà tornare true se si ha vinto o perso
+}
+function statsRecovery(p) {
+    p.hp = p.hpMax
+    p.mana = p.manaMax
+}
+function action(){
+    // main logic
+}
+
+
+
+
+/*--------------------------------------
+|                MAIN                  |
+----------------------------------------*/
+
+
+// Qui l'action è la stessa solo che poi bisogna disabilitare il btn
+buildItems(player)
+let btnItemList = document.getElementsByClassName('btn-item-action')
+
+buildSkills(player)
+let btnSkillList = document.getElementsByClassName('btn-skill-action')
+
+let winLvl = false
+let lose = false
+let i = 0
+//  Potremmo metterli nella stessa funzione dato che uno è conseguenza dell'altro
+
+interlude()
+buildScenario(player, allOpponents[i])
+
+
+// NEED to change this for all buttons
+btnAtt.addEventListener('click', () => {
+    //fa la mossa sia per me che per l'avversario
+    action()
+
+    if (checkEndLvl(player, allOpponents[i])) {
+        //se ho finito il livello, controlla come è stato finito
+        if (winLvl) {
+            //se ho vinto, passa al prossimo avversario e ripristina stats
+            // del giocatore
+
+            if (i==5){
+                //se ho vinto ed ho sconfitto il boss, lancia l'end-game
+                endGameScreen()
+            }
+            
+            i++
+            interlude()
+            statsRecovery()
+            //dopo che è finito interlude, forse qui potremmo abilitare btns
+            buildScenario(player, allOpponents[i])
+        }else if(lose){
+            //se ho perso lancia il game over
+            gameOverScreen()
+        }
+
+    }
+
+
+})

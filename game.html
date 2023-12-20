@@ -14,51 +14,64 @@
 
 <body>
     <main class="d-flex flex-column justify-content-between align-items-center text-white">
+
         <div id="heading" class="d-flex flex-column mt-5 border rounded p-3 ww">
+            <!-- Js class = 'heading' -->
             <!--Modifico dinamicamente con i valori del giocastore e avversario-->
-            <p class="text-center">LEVEL <span>5</span>/6</p>
-            <p class="text-center"><span id="player-name">GIORGIO</span> VS <span id="opponent-name">CARLO</span>
+            <p class="text-center m-1">LEVEL <span id="curr-level" class="heading">5</span>/6</p>
+            <!-- Potrei cambiare textContent di #overview per mostrare un messaggio durante interlude -->
+            <p id="msg" class="heading text-center m-0"><span id="player-name" class="heading">GIORGIO</span> VS <span id="opponent-name" class="heading">CARLO</span>
             </p>
         </div>
-        <div id="arena" class="justify-content-between">
 
+        <div id="arena" class="d-flex flex-column justify-content-between">
+            <!-- Hide on interlude -->
             <div id="stats-wrapper" class="d-flex justify-content-between w-100 p-2">
+                <!-- Js class = 'stats' -->
                 <div id="player-stats" style="width: 47%">
-                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="player-hp">52</span>/ <span
-                            id="player-hp-tot">150</span></p>
+                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="player-hp" class="stats">52</span>/ <span
+                            id="player-hp-tot" class="stats">150</span></p>
                     <div id="hp-bar-wrapper" class="border">
                         <!--Modifico dinamicamente lo stile per la width-->
-                        <div id="hp-bar" class="bg-success hp"></div>
+                        <div id="hp-bar-p" class="stats bg-success hp"></div>
                     </div>
                 </div>
+
                 <div id="opponent-stats" style="width: 47%">
-                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="opponent-hp">52</span>/
-                        <span id="opponent-hp-tot">150</span></p>
+                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="opponent-hp" class="stats">52</span>/
+                        <span id="opponent-hp-tot" class="stats">150</span></p>
                     <div id="hp-bar-wrapper-opp" class="border">
                         <!--Modifico dinamicamente lo stile per la width-->
-                        <div id="hp-bar-opp" class="bg-success hp"></div>
+                        <div id="hp-bar-opp" class="stats bg-success hp"></div>
                     </div>
                 </div>
-            </div>
 
-            <div id="char">
+            </div>
+            <!-- Hide on interlude -->
+            <div id="char-section" class="d-flex justify-content-between">
                 <div id="player" class="">
-                    <img class="pg " src="./assets/img/characters/hunter.gif" alt="">
+                    <!--    Dynamic inner HTML change   -->
+                    <!-- TODO: check alignment of class pg w/ all gifs -->
+                    <img class="pg" src="./assets/img/characters/hunter.gif" alt="player">
                 </div>
                 <div id="opponent">
-                    <img class="pg" src="assets/img/characters/neon-female-warrior-end.gif" alt="">
+                    <!--    Dynamic inner HTML change   -->
+                    <!-- TODO: check alignment of class pg w/ all gifs -->
+                    <img class="pg" src="assets/img/characters/neon-female-warrior-end.gif" alt="opponent">
                 </div>
             </div>
         </div>
 
         <div id="actions-wrapper" class="d-flex flex-column border align-items-center ww gap-3 pt-3 pb-3 mb-3">
             <div class="d-flex w-100 justify-content-evenly">
-                <button class="btn bg-transparent border w-25 text-success">ATT</button>
-                <button class="btn bg-transparent border w-25 text-primary">SKILL</button>
+                <button id="btn-att" type="button" class="btn bg-transparent border w-25 text-success">ATT</button>
+                <button id="btn-skill" type="button" class="btn bg-transparent border w-25 text-primary">SKILL</button>
             </div>
             <div class="d-flex w-100 justify-content-evenly">
-                <button class="btn bg-transparent border w-25 text-warning">ITEM</button>
-                <a href="./gg.html" class="w-25"><button
+                <button id="btn-item" type="button" class="btn bg-transparent border w-25 text-warning">ITEM</button>
+
+                <!-- Bonus: Modal to confirm RUN -->
+                <a href="./gg.html" class="w-25"><button id="btn-run" type="button"
                         class="btn bg-transparent border w-100 text-danger">RUN</button></a>
             </div>
         </div>

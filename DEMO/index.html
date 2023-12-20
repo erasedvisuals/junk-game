@@ -16,6 +16,11 @@
         .hp {
             height: 10px;
         }
+        .htest{
+            animation: h 15s forwards ease-in;
+            opacity: 0%;
+        }
+        
     </style>
 </head>
 
@@ -27,7 +32,7 @@
     </div>
     <div id="arena" class="justify-content-between">
 
-        <div id="stats-wrapper" class="d-flex justify-content-between w-100 p-2">
+        <div id="stats-wrapper" class="htest d-flex justify-content-between w-100 p-2">
             <div id="player-stats" style="width: 47%">
                 <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="player-hp">52</span>/ <span
                         id="player-hp-tot">150</span></p>
@@ -46,7 +51,7 @@
             </div>
         </div>
 
-        <div id="char">
+        <div id="char" class="htest">
             <div id="player" class="">
                 <img class="pg " src="./assets/img/characters/hunter.gif" alt="">
             </div>
@@ -68,9 +73,10 @@
             <a href="./gg.html" class="w-25"><button class="btn bg-transparent border w-100 text-danger">RUN</button></a>
         </div>
     </div>
+    <div id="x" class="reset-1 reset-2 reset-3"></div>
     
     <script>
-        let ost = new Audio("./assets/audio/corpoBuilding-theme.mp3")
+        /* let ost = new Audio("./assets/audio/corpoBuilding-theme.mp3")
         let sfxHit = new Audio("./assets/audio/sfx/hit-8.mp3")
         let sfxSteps = new Audio("./assets/audio/sfx/steps.mp3")
         ost.volume = 0.1
@@ -93,8 +99,12 @@
             console.log(`${ost.ended}`) 
             
             
-        })
-
+        }) */
+        let test = document.getElementById('x')
+        test.classList.remove('reset-5')
+        test.classList.remove('reset-6')
+        test.classList.remove('reset-9')
+        test.classList.remove('reset-1')
         
         
 

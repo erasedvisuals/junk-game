@@ -7,10 +7,16 @@
          Green:    #7CFF01
          Bg-color: #181818
          */
-
+/*
+        LAYOUT
+*/
 * {
     box-sizing: border-box;
     margin: 0;
+}
+
+.ww {
+    width: 80vw;
 }
 
 main {
@@ -19,23 +25,13 @@ main {
 }
 
 #arena {
-    display: flex;
-    flex-direction: column;
-    background-image: url('./assets/img/arenas/corpo-building.gif');
-
-    background-color: darkslategray;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
     width: 80vw;
     height: 100vh;
     max-width: 498px;
     max-height: 498px;
 }
 
-#char {
-    display: flex;
-    justify-content: space-between;
+#char-section {
     padding: 0% 12% 12% 12%;
 }
 
@@ -51,6 +47,17 @@ main {
     overflow: hidden;
 }
 
+
+
+
+
+/*
+        ELEMENTS
+*/
+.hp {
+    height: 10px;
+}
+
 .pg {
     object-fit: cover;
     object-position: 50%;
@@ -60,7 +67,111 @@ main {
     right: 50%;
 }
 
+/* TODO: Customize these elements */
+#heading {}
 
+#stats-wrapper {}
+
+#player-name {}
+
+#opponent-name {}
+
+#actions-wrapper {}
+
+#btn-att {}
+
+#btn-skill {}
+
+#btn-item {}
+
+#btn-run {}
+
+
+
+/*
+        UTILITY
+*/
+.hide {
+    animation: fade-in 15s forwards ease-in;
+    opacity: 0%;
+}
+
+
+
+/*
+        ARENA CLASSES
+*/
+.arena-corpoBuilding {
+    background-image: url('./DEMO/assets/img/arenas/corpo-building.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-foggyGasStation {
+    background-image: url('./DEMO/assets/img/arenas/foggy-gas-station.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-industrialRooftop {
+    background-image: url('./DEMO/assets/img/arenas/night-industrial-rooftop.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-corpoStreet {
+    background-image: url('./DEMO/assets/img/arenas/night-corpo-street.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-nightStreetfood {
+    background-image: url('./DEMO/assets/img/arenas/night-streetfood.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-vhsShop {
+    background-image: url('./DEMO/assets/img/arenas/Night-vhs-shop.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-apocalypse {
+    background-image: url('./DEMO/assets/img/arenas/apocalypse.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-interlude-metro {
+    background-image: url('./DEMO/assets/img/status-bg/interlude-1.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.arena-interlude-car {
+    background-image: url('./DEMO/assets/img/status-bg/interlude-0.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
 
 /*
         ANIMATION CLASSES AND KEYFRAMES
@@ -167,5 +278,19 @@ main {
     100% {
         right: 10px;
         left: 0
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+
+    60% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
     }
 }
