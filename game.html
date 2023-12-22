@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junk - Play</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lobster&family=Monoton&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;1,400;1,500&family=Neonderthaw&family=Silkscreen:wght@400;700&family=Tilt+Neon&family=Urbanist:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400&display=swap"
+        rel="stylesheet">
     <!--BS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -13,39 +18,55 @@
 </head>
 
 <body>
-    <main class="d-flex flex-column justify-content-between align-items-center text-white">
+    <main id="main" class="d-flex flex-column justify-content-between align-items-center text-white">
+        <!-- div to display ONLY if the game is over and win -->
+        <div id="end-game-title" class="d-flex flex-column d-none" style="margin-top: 50%;">
+            <h1 class="text-center" style="font-size: 4rem;">THANKS</h1>
+            <h3 class="text-center" style="font-size: 2rem;">FOR PLAYNG</h3>
+        </div>
 
-        <div id="heading" class="d-flex flex-column mt-5 border rounded p-3 ww">
+        <div id="heading" class="d-flex flex-column mt-5 border rounded p-3 ww bg-dark-mirror idle">
             <!-- Js class = 'heading' -->
             <!--Modifico dinamicamente con i valori del giocastore e avversario-->
-            <p class="text-center m-1">LEVEL <span id="curr-level" class="heading">5</span>/6</p>
+            <p class="text-center m-1 fw-bold">LEVEL <span id="curr-level" class="heading text-neon-g">5</span>/6</p>
             <!-- Potrei cambiare textContent di #overview per mostrare un messaggio durante interlude -->
-            <p id="msg" class="heading text-center m-0"><span id="player-name" class="heading">GIORGIO</span> VS <span id="opponent-name" class="heading">CARLO</span>
+            <p class="text-center m-0">
+                <span id="player-name" class="heading text-neon-c">PLAYER</span> <span id="msg"
+                    class="heading">VS</span> <span id="opponent-name" class="heading text-neon-p">OPP</span>
             </p>
         </div>
 
-        <div id="arena" class="d-flex flex-column justify-content-between">
-            <!-- Hide on interlude -->
-            <div id="stats-wrapper" class="d-flex justify-content-between w-100 p-2">
+        <div id="arena" class="d-flex flex-column rounded justify-content-between idle">
+            <!-- Hide on interlude --> <!-- TODO: bg-dark-mirror -->
+            <div id="stats-wrapper" class="d-flex justify-content-between w-100 p-2 pb-3 rounded-bottom"
+                style="background-color: #181818a6">
                 <!-- Js class = 'stats' -->
-                <div id="player-stats" style="width: 47%">
-                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="player-hp" class="stats">52</span>/ <span
-                            id="player-hp-tot" class="stats">150</span></p>
+                <div id="player-stats" class="" style="width: 47%">
+                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="player-hp"
+                            class="stats">52</span>/ <span id="player-hp-tot" class="stats">150</span></p>
                     <div id="hp-bar-wrapper" class="border">
                         <!--Modifico dinamicamente lo stile per la width-->
-                        <div id="hp-bar-p" class="stats bg-success hp"></div>
+                        <div id="hp-bar-p" class="stats bg-neon-g hp"></div>
                     </div>
                 </div>
 
                 <div id="opponent-stats" style="width: 47%">
-                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="opponent-hp" class="stats">52</span>/
-                        <span id="opponent-hp-tot" class="stats">150</span></p>
+                    <p class="m-0"><span class="text-danger fw-bold">HP</span> <span id="opponent-hp"
+                            class="stats">52</span>/
+                        <span id="opponent-hp-tot" class="stats">150</span>
+                    </p>
                     <div id="hp-bar-wrapper-opp" class="border">
                         <!--Modifico dinamicamente lo stile per la width-->
-                        <div id="hp-bar-opp" class="stats bg-success hp"></div>
+                        <div id="hp-bar-opp" class="stats bg-neon-g hp"></div>
                     </div>
                 </div>
 
+            </div>
+            <!-- div to display ONLY if the game is over with loss -->
+            <div id="game-over" class="d-flex flex-column align-items-center justify-content-between h-100 mt-5 d-none">
+                <h1 class="text-center" style="font-size: 3rem;">GAME OVER</h1>
+                <a id="continue" href="./index.html" class="w-50 d-none"><button
+                        class="btn w-100 text-white border mb-5 bg-dark-mirror idle">MAIN MENU</button></a>
             </div>
             <!-- Hide on interlude -->
             <div id="char-section" class="d-flex justify-content-between">
@@ -62,56 +83,77 @@
             </div>
         </div>
 
-        <div id="actions-wrapper" class="d-flex flex-column border align-items-center ww gap-3 pt-3 pb-3 mb-3">
+        <div id="actions-wrapper"
+            class="d-flex flex-column border rounded align-items-center ww gap-3 pt-3 pb-3 mb-3 bg-dark-mirror">
             <div class="d-flex w-100 justify-content-evenly">
-                <button id="btn-att" type="button" class="btn bg-transparent border w-25 text-success">ATT</button>
-                <button id="btn-skill" type="button" class="btn bg-transparent border w-25 text-primary">SKILL</button>
+                <button id="btn-att" type="button"
+                    class="btn bg-transparent border w-25 text-success idle-att">ATT</button>
+                <button id="btn-skill" type="button" class="btn bg-transparent border w-25 text-primary idle-skill"
+                    data-bs-toggle="modal" data-bs-target="#skills-modal">SKILL</button>
             </div>
             <div class="d-flex w-100 justify-content-evenly">
-                <button id="btn-item" type="button" class="btn bg-transparent border w-25 text-warning">ITEM</button>
+                <button id="btn-item" type="button" class="btn bg-transparent border w-25 text-warning idle-item"
+                    data-bs-toggle="modal" data-bs-target="#items-modal">ITEM</button>
 
                 <!-- Bonus: Modal to confirm RUN -->
-                <a href="./gg.html" class="w-25"><button id="btn-run" type="button"
-                        class="btn bg-transparent border w-100 text-danger">RUN</button></a>
+                <button id="btn-run" type="button" class="btn bg-transparent border w-25 text-neon-r"
+                    data-bs-toggle="modal" data-bs-target="#run-modal">RUN</button>
+            </div>
+        </div>
+    </main>
+    <!-- MODALS -->
+    <!-- Items modal -->
+    <div id="items-modal" class="modal fade" tabindex="-1" aria-hidden="true" aria-labelledby="modal-title">
+
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+            <div class="modal-content d-flex flex-column bg-dark-mirror text-white">
+                <div class="modal-header p-1 mt-2">
+                    <h5 class="modal-title text-center w-100 pb-2">Items</h5>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-content-center flex-wrap gap-3 pt-4
+                pb-4 pe-1 ps-1" id="items-body">
+                    <!-- Dynamically insert the player's items -->
+                </div>
             </div>
         </div>
 
-        <!-- <script>
-            let ost = new Audio("./assets/audio/corpoBuilding-theme.mp3")
-            let sfxHit = new Audio("./assets/audio/sfx/hit-8.mp3")
-            let sfxSteps = new Audio("./assets/audio/sfx/steps.mp3")
-            ost.volume = 0.1
-            ost.play()
-            ost.loop = true
-    
-            document.getElementsByTagName('button')[0].addEventListener('click', function(){
-                
-                
-                sfxSteps.play()
-                sfxHit.volume = 1
-                setTimeout(()=>{sfxHit.play()
-                    document.getElementById('opponent').classList.add('hurt')}, 1080)
-                document.getElementById('opponent').classList.remove('hurt')
-                document.getElementById('player').classList.add('att')
-                setTimeout(()=>{document.getElementById('player').classList.remove('att')},1510)
-            })
-            document.getElementsByTagName('button')[1].addEventListener('click', function(){
-                ost.pause()
-                console.log(`${ost.ended}`) 
-                
-                
-            })
-    
-            
-            
-    
-        </script> -->
-    </main>
+    </div>
+    <!-- Skills modal -->
+    <div id="skills-modal" class="modal fade" tabindex="-1" aria-hidden="true" aria-labelledby="modal-title">
+
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+            <div class="modal-content d-flex flex-column bg-dark-mirror text-white ww">
+                <div class="modal-header p-1 mt-2">
+                    <h5 class="modal-title text-center w-100 pb-2">Skills</h5>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-content-center flex-wrap gap-3 pt-4
+                pb-4 pe-1 ps-1" id="skills-body">
+                    <!-- Dynamically insert the player's skills -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Run modal -->
+    <div id="run-modal" class="modal fade" tabindex="-1" aria-hidden="true" aria-labelledby="modal-title">
+
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+            <div class="modal-content d-flex flex-column bg-dark-mirror text-white ww">
+                <div class="modal-body d-flex justify-content-center align-content-center flex-wrap gap-3 pt-4
+                pb-4 pe-1 ps-1" id="run-body">
+                    <h5>Are you sure you want to leave?</h5>
+                    <a href="./index.html"><button class="btn btn-danger">I WANT TO LEAVE</button></a>
+                    <button class="btn btn-secondary" data-bs-dismiss='modal'>CLOSE</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <script src="gameLogic.js"></script>
+    <script src="./gameLogic.js"></script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .ww {
@@ -21,7 +22,11 @@
 
 main {
     height: 100vh;
+    background-image: url("./DEMO/assets/img/bg.gif");
     background-color: #181818;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
 }
 
 #arena {
@@ -32,7 +37,7 @@ main {
 }
 
 #char-section {
-    padding: 0% 12% 12% 12%;
+    padding: 0% 12% 5% 12%;
 }
 
 #player {
@@ -47,7 +52,9 @@ main {
     overflow: hidden;
 }
 
-
+.modal-content {
+    width: 90vw;
+}
 
 
 
@@ -62,12 +69,55 @@ main {
     object-fit: cover;
     object-position: 50%;
     width: auto;
-    height: 100%;
     position: relative;
-    right: 50%;
 }
 
-/* TODO: Customize these elements */
+.obj-item {
+    min-width: 6rem;
+    min-height: 6rem;
+}
+
+.obj-skill {
+    min-width: 6rem;
+    min-height: 8rem;
+}
+
+.fit {
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+}
+
+/*
+      CUSTOMIZATION
+*/
+.bg-dark-mirror{
+    background-color: #181818e1
+}
+.bg-neon-mirror-c{
+    background-color: #01FFF4c7
+}
+.bg-neon-mirror-p{
+    background-color: #ff11784e
+}
+.bg-neon-g{
+    background-color: #1dad00;
+}
+.text-neon-c {
+    color: #01FFF4;
+}
+
+.text-neon-p {
+    color: #FF1178;
+}
+
+.text-neon-r {
+    color: #FE0000;
+}
+
+.text-neon-g {
+    color: #7CFF01;
+}
 #heading {}
 
 #stats-wrapper {}
@@ -91,10 +141,11 @@ main {
 /*
         UTILITY
 */
-.hide {
-    animation: fade-in 15s forwards ease-in;
-    opacity: 0%;
+.resize {
+    position: relative;
+    right: 100%;
 }
+
 
 
 
@@ -137,7 +188,7 @@ main {
     background-image: url('./DEMO/assets/img/arenas/night-streetfood.gif');
     background-color: darkslategray;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
 }
 
@@ -157,7 +208,7 @@ main {
     background-size: cover;
 }
 
-.arena-interlude-metro {
+.arena-interlude-0 {
     background-image: url('./DEMO/assets/img/status-bg/interlude-1.gif');
     background-color: darkslategray;
     background-repeat: no-repeat;
@@ -165,8 +216,24 @@ main {
     background-size: cover;
 }
 
-.arena-interlude-car {
+.arena-interlude-1 {
     background-image: url('./DEMO/assets/img/status-bg/interlude-0.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.game-over {
+    background-image: url('./DEMO/assets/img/status-bg/game-over.gif');
+    background-color: darkslategray;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.end-game {
+    background-image: url('./DEMO/assets/img/status-bg/end-game.gif');
     background-color: darkslategray;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -176,6 +243,23 @@ main {
 /*
         ANIMATION CLASSES AND KEYFRAMES
 */
+.hide {
+    animation: fade-in 15s forwards ease-in-out;
+    opacity: 100%;
+}
+
+.idle{
+    animation: idle 2s ease-out infinite alternate;
+}
+.idle-att{
+    animation: idle-att .3s ease-in-out infinite ;
+}
+.idle-skill{
+    animation: idle-skill .3s ease-in-out infinite ;
+}
+.idle-item{
+    animation: idle-item .3s ease-in-out infinite ;
+}
 .hurt {
     animation: hurt .5s;
     position: relative;
@@ -189,6 +273,47 @@ main {
     left: 0px;
     right: 0px;
 }
+.att-end {
+    animation: attack-end 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+.heal {
+    animation: healing 1.5s ease-in-out;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+.shot {
+    animation: shooting 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+.shot-end {
+    animation: shooting-end 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+.boom {
+    animation: boom 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+.boom-end {
+    animation: boom-end 1.5s;
+    position: relative;
+    left: 0px;
+    right: 0px;
+}
+
+
 
 @keyframes attack {
     0% {
@@ -242,6 +367,100 @@ main {
         right: 0px;
     }
 }
+@keyframes attack-end {
+    0% {
+        left: -0px;
+        right: 0px;
+
+    }
+
+    75% {
+        left: -50%;
+        right: 0px;
+    }
+
+    80% {
+        left: -45%;
+        right: 0px;
+    }
+
+    83% {
+        left: -50%;
+        right: 0px;
+    }
+
+    86% {
+        left: -54%;
+        right: 0px;
+    }
+
+    89% {
+        left: -45%;
+        right: 0px;
+    }
+
+    85% {
+        left: -50%;
+        right: 0px;
+    }
+
+    90% {
+        left: -54%;
+        right: 0px;
+    }
+
+    95% {
+        left: -50%;
+        right: 0px;
+    }
+
+    100% {
+        left: -0px;
+        right: 0px;
+    }
+}
+
+@keyframes healing {
+    0% {
+        box-shadow: 0px 0px 0px 0px #02ff021e;
+    }
+
+    75% {
+        box-shadow: 0px 0px 12px 5px #02ff021e;
+    }
+
+    80% {
+        box-shadow: 2px -5px 12px 5px #02ff021e;
+    }
+
+    83% {
+        box-shadow: 12px -2px 12px 5px #02ff021e;
+    }
+
+    86% {
+        box-shadow: 12px 5px 12px 5px #02ff021e;
+    }
+
+    89% {
+        box-shadow: 12px 12px 12px 5px #02ff021e;
+    }
+
+    85% {
+        box-shadow: inset 2px 12px 12px 5px #02ff021e;
+    }
+
+    90% {
+        box-shadow: inset -12px 12px 12px 5px #02ff021e;
+    }
+
+    95% {
+        box-shadow: inset -2px 2px 25px 23px #02ff021e;
+    }
+
+    100% {
+        box-shadow: inset 0px 0px 45px 50px rgba(0, 128, 0, 0.13);
+    }
+}
 
 @keyframes hurt {
     0% {
@@ -283,14 +502,237 @@ main {
 
 @keyframes fade-in {
     0% {
+        opacity: 100%;
+    }
+
+    20% {
         opacity: 0%;
     }
 
-    60% {
+    80% {
         opacity: 0%;
     }
 
     100% {
         opacity: 100%;
     }
+}
+
+@keyframes shooting {
+    0% {
+        box-shadow: 0px 0 0 0px #01fff4;
+    }
+
+    35% {
+        box-shadow: -43px 0px 50px 5px #01fff4;
+    }
+
+    75% {
+        box-shadow: -43px 0px 35px -25px #01fff4;
+    }
+
+    80% {}
+
+    83% {}
+
+    86% {}
+
+    89% {}
+
+    85% {}
+
+    90% {}
+
+    95% {}
+
+    100% {
+        box-shadow: 100px 0px 48px -41px #01fff4;
+    }
+}
+@keyframes shooting-end {
+    0% {
+        box-shadow: 0px 0 0 0px #01fff4;
+    }
+
+    35% {
+        box-shadow: 43px 0px 50px 5px #01fff4;
+    }
+
+    75% {
+        box-shadow: 43px 0px 35px -25px #01fff4;
+    }
+
+    80% {}
+
+    83% {}
+
+    86% {}
+
+    89% {}
+
+    85% {}
+
+    90% {}
+
+    95% {}
+
+    100% {
+        box-shadow: -100px 0px 48px -41px #01fff4;
+    }
+}
+
+@keyframes boom {
+    0% {left:0;}
+    
+    40% {left:50%;}
+    
+    75% {left: 0%;
+        right: 0px;
+        box-shadow: 0px 0px 0px 0px red;
+    }
+
+    80% {
+        left: 3%;
+        right: 0px;
+        
+    }
+
+    83% {
+        left: 5%;
+        right: 0px;
+    }
+
+    86% {
+        left: 10%;
+        right: 0px;
+    }
+
+    89% {
+        left: 3%;
+        right: 0px;
+    }
+
+    85% {
+        left: 5%;
+        right: 0px;
+    }
+
+    90% {
+        left: 10%;
+        right: 0px;
+    }
+
+    95% {
+        left: 5%;
+        right: 0px;
+    }
+
+    100% {
+        left: 0px;
+        right: 0px;
+        box-shadow: 0px 0px 50px 0px rgba(255, 166, 0, 0.171);
+    }
+}
+@keyframes boom-end {
+    0% {left:0;}
+    
+    40% {left:-50%;}
+    
+    75% {left: -0%;
+        right: 0px;
+        box-shadow: 0px 0px 0px 0px red;
+    }
+
+    80% {
+        left: -3%;
+        right: 0px;
+        
+    }
+
+    83% {
+        left: -5%;
+        right: 0px;
+    }
+
+    86% {
+        left: -10%;
+        right: 0px;
+    }
+
+    89% {
+        left: -3%;
+        right: 0px;
+    }
+
+    85% {
+        left: -5%;
+        right: 0px;
+    }
+
+    90% {
+        left: -10%;
+        right: 0px;
+    }
+
+    95% {
+        left: -5%;
+        right: 0px;
+    }
+
+    100% {
+        left: -0px;
+        right: 0px;
+        box-shadow: 0px 0px 50px 0px rgba(255, 166, 0, 0.171);
+    }
+}
+
+@keyframes idle {
+    0% {
+        box-shadow: 0px 0px 20px 0px #FF1178
+    }
+
+    33% {
+        box-shadow: 0px 0px 20px 2px #FF1178
+    }
+
+    66% {
+        box-shadow: 0px 0px 20px 1px #01FFF4
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 0px #01FFF4
+    }
+}
+@keyframes idle-att {
+    0% {box-shadow: 2px 0px 5px 0px green;}
+
+    25% {box-shadow: 0px 2px 5px 0px green;}
+
+    50% {box-shadow: -2px 0px 5px 0px green;}
+
+    75% {box-shadow: 0px -2px 5px 0px green;}
+
+    100% {box-shadow: 0px -2px 5px 0px green;}
+}
+@keyframes idle-skill {
+    0% {box-shadow: 2px 0px 5px 0px #01FFF4;}
+
+    25% {box-shadow: 0px 2px 5px 0px #01FFF4;}
+
+    50% {box-shadow: -2px 0px 5px 0px #01FFF4;}
+
+    75% {box-shadow: 0px -2px 5px 0px #01FFF4;}
+
+    100% {box-shadow: 0px -2px 5px 0px #01FFF4;}
+}
+@keyframes idle-item {
+    0% {box-shadow: 2px 0px 5px 0px #fff205;}
+
+    25% {box-shadow: 0px 2px 5px 0px #fff205;}
+
+    50% {box-shadow: -2px 0px 5px 0px #fff205;}
+
+    75% {box-shadow: 0px -2px 5px 0px #fff205;}
+
+    100% {box-shadow: 0px -2px 5px 0px #fff205;}
 }
