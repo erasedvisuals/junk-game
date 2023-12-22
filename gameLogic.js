@@ -141,18 +141,18 @@ const PGList = [
         src: "DEMO/assets/img/characters/neon-female-warrior",
         orientation: "-end",
         style: "height:100%;right:60%;",
-        hp: 150,
-        hpMax: 150,
+        hp: 300,
+        hpMax: 300,
         mana: 390,
         manaMax: 390,
-        strenght: () => { return exVal(48, 62) },
+        strenght: () => { return exVal(70, 90) },
         items: [itemsList[0], itemsList[0], itemsList[4]],
         skills: [
             {
                 id: 1,
                 ico: "DEMO/assets/img/ico/katana.png",
                 name: "Katana Slash",
-                strenght: () => { return exVal(70, 99) },
+                strenght: () => { return exVal(74, 151) },
                 cost: 55,
                 role: 1,
                 animation: "att", //sfx blade
@@ -172,8 +172,8 @@ const PGList = [
                 id: 3,
                 ico: "DEMO/assets/img/ico/software-update.png",
                 name: "Software Update",
-                strenght: () => { return exVal(20, 40) },
-                cost: 20,
+                strenght: () => { return exVal(50, 70) },
+                cost: 40,
                 role: 0,
                 animation: "heal",
                 sfx: "DEMO/assets/audio/sfx/heal.mp3"
@@ -187,18 +187,18 @@ const PGList = [
         src: "DEMO/assets/img/characters/death-angel",
         orientation: "-end",
         style: "height:72%;right:65%",
-        hp: 190,
-        hpMax: 190,
+        hp: 270,
+        hpMax: 270,
         mana: 140,
         manaMax: 140,
-        strenght: () => { return exVal(55, 65) },
+        strenght: () => { return exVal(80, 94) },
         items: [itemsList[5], itemsList[5], itemsList[5], itemsList[5]],
         skills: [
             {
                 id: 1,
                 ico: "DEMO/assets/img/ico/scythe.png",
                 name: "Scythe Slash",
-                strenght: () => { return exVal(70, 99) },
+                strenght: () => { return exVal(85, 190) },
                 cost: 55,
                 role: 1,
                 animation: "att", //sfx blade
@@ -207,8 +207,8 @@ const PGList = [
             {
                 id: 2,
                 ico: "DEMO/assets/img/ico/katana.png",
-                name: "Quantum Blade",
-                strenght: () => { return exVal(50, 250) },
+                name: "Quantum Blade 0v3rc0k3d",
+                strenght: () => { return exVal(120, 250) },
                 cost: 140,
                 role: 1,
                 animation: "att",//sfx blade
@@ -218,8 +218,8 @@ const PGList = [
                 id: 3,
                 ico: "DEMO/assets/img/ico/blood.png",
                 name: "Pray",
-                strenght: () => { return exVal(10, 40) },
-                cost: 20,
+                strenght: () => { return exVal(100, 150) },
+                cost: 50,
                 role: 0,
                 animation: "heal",
                 sfx: "DEMO/assets/audio/sfx/heal.mp3"
@@ -228,8 +228,8 @@ const PGList = [
                 id: 4,
                 ico: "DEMO/assets/img/ico/blood-projectile.png",
                 name: "Blood Projectile",
-                strenght: () => { return exVal(70, 80) },
-                cost: 50,
+                strenght: () => { return 170 },
+                cost: 80,
                 role: 1,
                 animation: "boom",//sfx boom
                 sfx: "DEMO/assets/audio/sfx/boom.mp3"
@@ -244,18 +244,18 @@ const PGList = [
         src: "DEMO/assets/img/characters/hunter",
         orientation: "-end",
         style: "height:95%;right:85%;",
-        hp: 250,
-        hpMax: 250,
+        hp: 400,
+        hpMax: 400,
         mana: 120,
         manaMax: 120,
-        strenght: () => { return exVal(25, 89) },
+        strenght: () => { return exVal(52, 78) },
         items: [itemsList[0], itemsList[0], itemsList[1], itemsList[1], itemsList[1]],
         skills: [
             {
                 id: 1,
                 ico: "DEMO/assets/img/ico/contract.png",
                 name: "Contract Execution",
-                strenght: () => { return exVal(80, 81) },
+                strenght: () => { return exVal(122, 148) },
                 cost: 50,
                 role: 1,
                 animation: "att",//sfx standard
@@ -281,11 +281,11 @@ const PGList = [
         src: "DEMO/assets/img/characters/smoking-guy",
         orientation: "-end",
         style: "height:100%;right:60%;",
-        hp: 300,
-        hpMax: 300,
+        hp: 420,
+        hpMax: 420,
         mana: 80,
         manaMax: 80,
-        strenght: () => { return exVal(70, 89) },
+        strenght: () => { return exVal(43, 62) },
         items: [itemsList[6], itemsList[6], itemsList[6], itemsList[6], itemsList[6]],
         skills: [
             {
@@ -308,18 +308,18 @@ const PGList = [
         src: "DEMO/assets/img/characters/robo-arm-girl",
         orientation: "-end",
         style: "height:100%;right:60%;",
-        hp: 280,
-        hpMax: 280,
+        hp: 250,
+        hpMax: 250,
         mana: 160,
         manaMax: 160,
-        strenght: () => { return exVal(70, 89) },
+        strenght: () => { return exVal(89, 101) },
         items: [itemsList[0], itemsList[0], itemsList[1], itemsList[1], itemsList[4]],
         skills: [
             {
                 id: 1,
                 ico: "DEMO/assets/img/ico/prosthetic.png",
                 name: "Cyber-arm Punch",
-                strenght: () => { return exVal(100, 110) },
+                strenght: () => { return exVal(105, 130) },
                 cost: 60,
                 role: 1,
                 animation: "att",//sfx standard
@@ -329,7 +329,7 @@ const PGList = [
                 id: 2,
                 ico: "DEMO/assets/img/ico/laser.png",
                 name: "Cyber-arm Shot",
-                strenght: () => { return exVal(120, 160) },
+                strenght: () => { return exVal(120, 170) },
                 cost: 100,
                 role: 1,
                 animation: "shot",//sfx shot
@@ -345,11 +345,11 @@ const PGList = [
         src: "DEMO/assets/img/characters/cyberskater",
         orientation: "-end",
         style: "height:100%;right:60%;",
-        hp: 350,
-        hpMax: 350,
+        hp: 480,
+        hpMax: 480,
         mana: 80,
         manaMax: 80,
-        strenght: () => { return exVal(55, 72) },
+        strenght: () => { return exVal(35, 58) },
         items: [itemsList[4], itemsList[4], itemsList[1], itemsList[1]],
         skills: [
             {
@@ -376,7 +376,7 @@ const PGList = [
                 id: 3,
                 ico: "DEMO/assets/img/ico/food-ration.png",
                 name: "NCPD Ration",
-                strenght: () => { return 60 },
+                strenght: () => { return 99 },
                 cost: 20,
                 role: 0,
                 animation: "heal",
@@ -398,7 +398,7 @@ const PGList = [
         mana: 250,
         manaMax: 250,
         strenght: () => { return exVal(70, 90) },
-        items: [],
+        items: [itemsList[5]],
         skills: [
             {
                 id: 1,
@@ -515,7 +515,7 @@ function createItemBtn(itemObj) {
 
 }
 function createSkillBtn(skillObj) {
-    // function to create the HTML element that represent the item
+    // function to create the HTML element that represent the skill
     let btnOut = document.createElement('button')
     btnOut.className = "d-flex flex-column border rounded obj-skill bg-dark-mirror text-white p-0"
     btnOut.setAttribute("data-bs-dismiss", "modal")
@@ -544,7 +544,6 @@ function buildItems(p, o) {
                 item.used = true
                 if (item.role) {
                     // fa danno
-                    //TODO: CREAT doItemAttack FUNCTION
                     turn(item, o, doItem)
                 } else if (!item.role) {
                     //cura
@@ -554,7 +553,6 @@ function buildItems(p, o) {
             })
             target.appendChild(btn)
         }
-        
     }
 }
 function buildSkills(p, o) {
@@ -589,7 +587,7 @@ function buildHeading(p, o, i) {
     heading[3].textContent = `${o.name}`
 }
 function buildArena(p, o) {
-    // add the arenaClassName to #arena and
+    // add the arenaClassName of the opp to #arena and
     // innest the updated <img> HTML
     arena.classList.add(o.arena)
     pHTML.innerHTML = `<img class="pg" src=${p.src + ".gif"} alt="player" style=${p.style}>`
@@ -664,7 +662,6 @@ function range(min, max, value) {
         //if too high
         return max
     }
-    console.log('non entro');
 }
 
 //      Animation Functions
@@ -732,7 +729,7 @@ function gameOverScreen() {
 }
 function animation(animName, sfx, actionToDo, oppTurn) {
     // animation function, based on the type of the action. There is also an orientation like
-    // in the PG object, to understand who's the attacker and the target
+    // in the PG object, to understand who's the attacker and who the target
     // 'opponent' -> 'player' || 'player' -> 'opponent'
     let tgt = 'opponent'
     let att = 'player'
@@ -742,7 +739,7 @@ function animation(animName, sfx, actionToDo, oppTurn) {
     }
 
     if (animName == 'heal') {
-        let sfxHit = new Audio(sfx) //TODO: heal SFX
+        let sfxHit = new Audio(sfx) 
         sfxHit.volume = 1
         document.getElementById(att).classList.add(animName)
         setTimeout(() => {
@@ -807,12 +804,12 @@ function updateHp(char, n) {
         [3]: span #opponent-hp
         [4]: span #opponent-hp-tot
         [5]: div #hp-bar-opp*/
-    console.log(char.hp + '<-------hp');
     char.hp = range(0, char.hpMax, char.hp)
     stats[n].textContent = char.hp
     stats[n + 2].setAttribute('style', `width: ${range(0, 100, ((char.hp / char.hpMax) * 100).toFixed(1))}%;`)
 }
 function statsRecovery(p) {
+    // max out the stats, used before a new Scenario begins
     p.hp = p.hpMax
     p.mana = p.manaMax
     updateHp(p, 0)
@@ -820,30 +817,28 @@ function statsRecovery(p) {
 //  typeMoves
 function doAttack(att, tgt, oppTurn) {
     // This function passes at the animation function what action has to do,
-    // and, in this special case, it has to decide what animationclass to pass
-    // based on the orientation
+    // and it has to decide what animationclass to pass
+    // based on the orientation: if enemy -> animclass + -end
     let sfxSteps = new Audio("./DEMO/assets/audio/sfx/steps.mp3")
     sfxSteps.play()
     let sfxHit = "DEMO/assets/audio/sfx/hit-8.mp3"
-    if (oppTurn) {
-        console.log('OPPONENT TURN IN DOATTACK w\ target --->' + tgt.name);
-    }
+    
     animation(oppTurn ? 'att-end' : 'att', sfxHit, () => {
 
         tgt.hp = tgt.hp - att.strenght()
         //if it's oppTurn, the hp to update are mine
-        console.log(tgt.name + '<------ TARGET NAME OF THE ATATCK');
         updateHp(tgt, oppTurn ? 0 : 3)
     },
         oppTurn)
 }
 function doSkill(att, tgt, oppTurn) {
+    // This function passes at the animation function what action has to do,
+    // and it has to decide what animationclass to pass
+    // based on the orientation: if enemy -> animclass + -end
     let sfxSkill = new Audio("./DEMO/assets/audio/sfx/skillCharge.mp3")
     sfxSkill.volume = .5
     sfxSkill.play()
-    if (oppTurn) {
-        console.log('OPPONENT TURN IN DOSKILL w\ target --->' + tgt.name);
-    }
+    
     animation(oppTurn ? att.animation + '-end' : att.animation, att.sfx, () => {
 
         tgt.hp = tgt.hp - att.strenght()
@@ -853,11 +848,11 @@ function doSkill(att, tgt, oppTurn) {
     }, oppTurn)
 }
 function doItem(att, tgt, oppTurn) {
+    // This function passes at the animation function what action has to do,
+    // and it has to decide what animationclass to pass
+    // based on the orientation: if enemy -> animclass + -end
     let sfxItem = new Audio("./DEMO/assets/audio/sfx/itemSearch.mp3")
     sfxItem.play()
-    if (oppTurn) {
-        console.log('OPPONENT TURN IN DOSKILL w\ target --->' + tgt.name);
-    }
     animation(oppTurn ? att.animation + '-end' : att.animation, att.sfx, () => {
 
         tgt.hp = tgt.hp - att.strenght()
@@ -867,13 +862,14 @@ function doItem(att, tgt, oppTurn) {
     }, oppTurn)
 }
 function doHealing(att, tgt, oppTurn) {
+    // This function passes at the animation function what action has to do,
+    // and it has NOT to decide what animationclass to pass
+    // based on the orientation, because the target is the att itself
     let sfxheal = new Audio("./DEMO/assets/audio/sfx/healCharge.mp3")
     sfxheal.volume = .4
     sfxheal.play()
-    if (oppTurn) {
-        console.log('OPPONENT TURN IN HEALING w\ target --->' + tgt.name);
-    }
     let sfxHit = "DEMO/assets/audio/sfx/heal.mp3"
+    
     animation('heal', sfxHit, () => {
 
         tgt.hp = tgt.hp + att.strenght()
@@ -884,13 +880,6 @@ function doHealing(att, tgt, oppTurn) {
 }
 function move(att, tgt, typeMove, oppTurn) {
     // total duration of each turn = 3.5s   
-    console.log(
-        function () {
-            if (oppTurn) {
-                return typeMove
-            } else return 'not opp turn'
-        }()
-    );
     typeMove(att, tgt, oppTurn)
 }
 
@@ -899,16 +888,14 @@ function moveAI(p, o) {
     // Like the main move function, but the only differences are:
     // The target is now the player and the action is random
     if (o.hp < 1) {
-        //do nothing and wait for checkEnd
+        //do nothing and wait for checkEnd if the opp was defeated
     } else {
-        console.log(p);
         let actions = [doAttack, useSkill, useItem]
         move(o, p, actions[exVal(0, actions.length - 1)], true)
     }
 }
 function useSkill(att, tgt, oppTurn) {
     let skillAI = att.skills[exVal(0, att.skills.length - 1)]
-    console.log(skillAI.name);
     if (skillAI.role) {
         doSkill(skillAI, tgt, oppTurn)
     } else if (!skillAI.role) {
@@ -917,7 +904,6 @@ function useSkill(att, tgt, oppTurn) {
 }
 function useItem(att, tgt, oppTurn) {
     let itemAI = att.items[exVal(0, att.items.length - 1)]
-    console.log(itemAI.name);
     if (itemAI.role) {
         doItem(itemAI, tgt, oppTurn)
     } else if (!itemAI.role) {
@@ -997,3 +983,16 @@ btnAtt.addEventListener('click', () => {
 })
 
 
+//TODO:
+/**
+ * Add items check for prevent the opponent to spam items
+ * Add mana check  ''     ''    ''    '''    ''  '' skills
+ * 
+ * Add mana screen to the skill modal track the current mana
+ * Add some feedback for clicking skills that costs too much
+ * 
+ * Add a <p></p> to insert the value of the action's 'strenght' and show when hit
+ * 
+ * 
+ * 
+ */

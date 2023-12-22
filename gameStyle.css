@@ -128,13 +128,21 @@ main {
 
 #actions-wrapper {}
 
-#btn-att {}
+#btn-att {
+    border: solid 2px #7CFF01;
+}
 
-#btn-skill {}
+#btn-skill {
+    border: solid 2px #01FFF4;
+}
 
-#btn-item {}
+#btn-item {
+    border: solid 2px #fff205;
+}
 
-#btn-run {}
+/* #btn-run {
+    border: solid 2px #FE0000;
+} */
 
 
 
